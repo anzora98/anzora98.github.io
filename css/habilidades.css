@@ -1,0 +1,217 @@
+.fondo {
+    background: url(../img/fondo.jpg);
+    width: 100%;
+    margin-top: -3rem;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+
+}
+
+main {
+    background: var(--white);
+}
+
+main .container-principal {
+    background: var(--white-2);
+    padding: 2.5rem;
+    margin: -3.5rem 4rem 1rem;
+    cursor: default;
+
+}
+
+.container-principal h1 {
+    color: var(--text-2);
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.container-principal p {
+    color: var(--text-2);
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.container-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    padding: 1rem 0;
+    text-align: start;
+
+}
+
+.card {
+    cursor: default;
+}
+
+.card img {
+    width: 100%;
+}
+
+.container-principal .container-card .card .card-body h3,
+.p {
+    color: var(--text-2);
+    padding: 0 1rem;
+}
+
+.card h3 {
+    margin: 1rem 0;
+    font-size: 1.8rem;
+}
+
+.card p {
+    font-size: 1.2rem;
+    text-align: start;
+}
+
+.card {
+    border: solid rgba(23, 31, 41, .2) 1px;
+    padding-bottom: 1rem;
+}
+
+/* Buttons */
+
+.container-principal .buttons {
+    display: grid;
+    justify-content: center;
+    margin-top: 2rem;
+    grid-template-columns: 1fr;
+
+
+}
+
+.container-principal .buttons a {
+    width: 100%;
+    display: block;
+    cursor: default;
+
+}
+
+.container-principal .buttons button {
+    width: 100%;
+    height: 3.5rem;
+    background: var(--primary);
+    color: var(--white);
+    margin: 1.2rem 0;
+    font-size: 1.5rem;
+    border-radius: .7rem;
+    font-weight: 500;
+}
+
+.buttons button:hover {
+    background: var(--dark);
+}
+
+
+/* --CV */
+/* .container-principal .header .inicio h1 ,h2{
+    font-size: 2rem;
+} */
+
+.contenedor-cv {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+}
+
+.contenedor-cv .item-cv {
+    margin: 1.5rem 0;
+}
+
+.contenedor-cv .item-cv h3 {
+    text-align: start;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.contenedor-cv .item-cv p {
+    text-align: start;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.contenedor-cv .item-cv ol,
+ul {
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: start;
+}
+
+.contenedor-cv .item-cv li {
+    margin: .5rem 0;
+}
+
+.contenedor-cv .item-cv .resaltar{
+    font-weight: 600;
+}
+
+/* CV */
+
+.header h2 {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+
+
+@media(max-width:1000px) {
+    .container-card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main .container-principal {
+        margin: -3.5rem 2rem;
+    }
+
+
+
+}
+
+@media (max-width:700px) {
+    .container-card {
+        grid-template-columns: 1fr;
+        padding: 0 .2rem;
+    }
+
+    main .container-principal {
+        margin: 0 0;
+
+    }
+
+
+
+}
+
+@media screen and (max-width:400px) {
+    .container-principal {
+        padding: .1rem;
+    }
+
+    .contenedor-cv {
+        padding: .2rem;
+    }
+
+    .contenedor-cv .item-cv h3 {
+        font-size: 1.5rem;
+    }
+
+    .contenedor-cv .item-cv ol,
+    ul {
+        font-size: 1rem;
+
+    }
+
+    .contenedor-cv .item-cv p {
+
+        font-size: 1rem;
+
+    }
+
+}
