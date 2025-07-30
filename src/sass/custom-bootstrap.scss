@@ -1,0 +1,29 @@
+// 1. Sobrescribir variables antes de importar Bootstrap
+$primary: #161827;
+$secondary: #bac8d9;
+$success:#272b3b;
+$info:#193940;
+$body-bg:#a8dce7;
+
+
+
+
+// 2. Importar Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+
+
+// 3. Agregar tus clases personalizadas después
+$custom-gradient: linear-gradient(
+  131deg,
+  rgba(24, 27, 38, 1) 0%,
+  rgba(79, 85, 115, 1) 35%,
+  rgba(159, 167, 191, 1) 100%
+);
+
+.bg-custom-gradient {
+  background: $custom-gradient;
+  color: white;
+}
+
