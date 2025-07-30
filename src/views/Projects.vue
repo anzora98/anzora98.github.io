@@ -3,13 +3,13 @@ import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 
 const slides = [
   {
-    image: '../../public/img/img.png',
+    image: 'img/img.png',
     title: 'Paginas Web',
     text: 'Estaticas y dinamicas',
     link: 'https://practicaflexbox363823.netlify.app/'
   },
   {
-    image: '../../public/img/movil.png',
+    image: 'img/movil.png',
     title: 'Aplicasiones Moviles',
     text: '',
     link: '/'
