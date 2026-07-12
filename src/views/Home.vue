@@ -45,8 +45,8 @@ onMounted(() => {
           
           <!-- Redes sociales -->
           <div class="social-links">
-            <a href="#" class="social-icon" aria-label="GitHub"><i class="bi bi-github"></i></a>
-            <a href="#" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a target="blank" href="https://github.com/samuelanzora363823" class="social-icon" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a target="blank" href="https://www.linkedin.com/in/samuel-antonio-anzora-castellanos-456854230" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
             <a href="#" class="social-icon" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
             <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
           </div>
