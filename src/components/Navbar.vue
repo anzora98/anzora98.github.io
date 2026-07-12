@@ -13,75 +13,95 @@ function closeMenu() {
 </script>
 
 <template>
-
-  <nav class="navbar custom-navbar bg-primary">
-    <div class="container d-flex justify-content-between align-items-center">
-      <!-- Logo -->
-      <router-link to="/" class="navbar-brand logo text-light">
-        <a class="h3 mb-0">
-          <img src="../../public/icono1.png" alt="" width="50px">
-        </a>
+  <nav class="navbar custom-navbar">
+    <div class="container d-flex justify-content-between align-items-center w-100">
+      
+      <!-- Logo: Símbolo 'A' Estilizado en SVG -->
+      <router-link to="/" class="navbar-brand logo" aria-label="Inicio">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-symbol">
+          <!-- Pata izquierda -->
+          <path d="M20 6 L8 34" stroke="#e2e8f0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Pata derecha (Acento Cian) -->
+          <path d="M20 6 L32 34" stroke="#38bdf8" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Línea central cruzada -->
+          <path d="M12 24 L28 24" stroke="#e2e8f0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Punto superior para toque tech -->
+          <circle cx="20" cy="6" r="3" fill="#38bdf8" />
+        </svg>
       </router-link>
 
-      <!-- Botón hamburguesa personalizado -->
+      <!-- Botón hamburguesa -->
       <button class="hamburger bg-transparent" @click="toggleMenu" :class="{ 'active': isMenuOpen }" aria-label="Menú">
-        <span class="hamburger-line bg-light"></span>
-        <span class="hamburger-line bg-light"></span>
-        <span class="hamburger-line bg-light"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
 
       <!-- Menú de navegación -->
-      <div class="nav-links ms-auto bg-primary" :class="{ 'active': isMenuOpen }">
-        <a class="nav-item">
-          <router-link to="/" class="nav-link  text-light" @click="closeMenu">Home</router-link>
-        </a>
-        <a class="nav-item">
-          <router-link to="/about" class="nav-link  text-light" @click="closeMenu">About</router-link>
-        </a>
-        <a class="nav-item">
-          <router-link to="/projects" class="nav-link  text-light" @click="closeMenu">Projects</router-link>
-        </a>
-        <!-- <a class="nav-item">
-          <router-link to="/service" class="nav-link text-light" @click="closeMenu">Service</router-link>
-        </a> -->
-        <a class="nav-item">
-          <router-link to="/contact" class="nav-link  text-light" @click="closeMenu">Contact</router-link>
-        </a>
+      <div class="nav-links ms-auto" :class="{ 'active': isMenuOpen }">
+        <router-link to="/" class="nav-link" @click="closeMenu">Home</router-link>
+        <router-link to="/about" class="nav-link" @click="closeMenu">About</router-link>
+        <router-link to="/projects" class="nav-link" @click="closeMenu">Portfolio</router-link>
+        <router-link to="/contact" class="nav-link" @click="closeMenu">Contact</router-link>
       </div>
+      
     </div>
   </nav>
 </template>
 
-
-<style lang="less" scoped>
-.navbar,
-.logo,
-.nav-links {
-  padding: 1.2rem 2.5rem;
-  position: relative;
+<style scoped>
+.custom-navbar {
+  /* --- LA SOLUCIÓN HARAGANA PERO PERFECTA --- */
+  /* sticky hace que ocupe espacio (no tapa el contenido) pero se quede pegado al hacer scroll */
+  position: sticky; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 5%;
+  
+  /* --- ESTILO DE COLOR: Negro Profundo --- */
+  background-color: rgba(5, 5, 5, 0.85); 
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+  
+  /* Subimos el z-index para asegurar que siempre flote sobre tus proyectos o vistas */
+  z-index: 1000; 
 }
 
-
+/* Animación sutil para el logo al pasar el mouse */
+.logo-symbol {
+  transition: transform 0.3s ease;
+}
+.logo-symbol:hover {
+  transform: scale(1.05);
+}
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  font-weight: 500;
   transition: all 0.3s ease;
 }
 
-
-
-
-
-a {
-  text-decoration: none;
+.nav-link:hover {
+  color: #38bdf8; 
+  transform: translateY(-2px);
 }
 
-.nav-item:hover{
-  border-bottom: 2px solid #bac8d9;
+.router-link-active {
+  color: #38bdf8;
+  font-weight: 700;
 }
 
+/* --- Botón Hamburguesa --- */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -91,31 +111,20 @@ a {
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10;
+  z-index: 1110;
 }
 
 .hamburger-line {
   width: 2rem;
-  height: 0.25rem;
+  height: 0.15rem;
+  background-color: #38bdf8;
   border-radius: 10px;
   transition: all 0.3s ease;
-  position: relative;
   transform-origin: center;
 }
 
-.hamburger.active .hamburger-line:nth-child(1) {
-  transform: rotate(45deg) translate(7px, 9px);
-}
-
-.hamburger.active .hamburger-line:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active .hamburger-line:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -8px);
-}
-
-@media (max-width: 768px) {
+/* --- Responsive --- */
+@media (max-width: 992px) {
   .hamburger {
     display: flex;
   }
@@ -125,22 +134,32 @@ a {
     top: 0;
     right: 0;
     height: 100vh;
-    width: 70%;
+    width: 100%;
+    background-color: #050505; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 3rem;
     transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 5;
+    transition: transform 0.4s ease;
   }
-
-
 
   .nav-links.active {
     transform: translateX(0);
   }
 
+  .nav-link {
+    font-size: 1.5rem;
+  }
 
+  .hamburger.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
 }
 </style>
