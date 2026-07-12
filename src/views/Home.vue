@@ -40,13 +40,17 @@ onMounted(() => {
           <h2 id="typing" class="typing-text"></h2>
         </div>
         
-        <div class="action-area">
-          <button class="cta-button">Download CV</button>
+<div class="action-area">
+          <!-- Convertimos el <a> para que luzca y actúe como tu botón -->
+          <!-- El atributo "download" fuerza al navegador a descargarlo en vez de solo abrirlo -->
+          <a href="/public/documents/cv.pdf" download="CV_Samuel_Anzora.pdf" class="cta-button" style="text-decoration: none; display: inline-block;">
+            Download CV
+          </a>
           
           <!-- Redes sociales -->
           <div class="social-links">
-            <a target="blank" href="https://github.com/samuelanzora363823" class="social-icon" aria-label="GitHub"><i class="bi bi-github"></i></a>
-            <a target="blank" href="https://www.linkedin.com/in/samuel-antonio-anzora-castellanos-456854230" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a target="_blank" href="https://github.com/samuelanzora363823" class="social-icon" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/samuel-antonio-anzora-castellanos-456854230" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
             <a href="#" class="social-icon" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
             <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
           </div>
