@@ -26,7 +26,6 @@ onMounted(() => {
 
     <!-- CONTENEDOR DE LA IMAGEN CON EL EFECTO DE DESVANECIMIENTO -->
     <div class="hero-image-wrapper">
-      <!-- Ruta corregida para la carpeta public -->
       <img src="/img/foto.png" alt="Profile" class="hero-image">
     </div>
 
@@ -44,7 +43,7 @@ onMounted(() => {
         <div class="action-area">
           <button class="cta-button">Download CV</button>
           
-          <!-- Botones de redes sociales restaurados -->
+          <!-- Redes sociales -->
           <div class="social-links">
             <a href="#" class="social-icon" aria-label="GitHub"><i class="bi bi-github"></i></a>
             <a href="#" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
@@ -59,20 +58,19 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* Fondo claro global */
+/* --- AQUÍ ESTÁ LA CORRECCIÓN DEL FONDO --- */
 .hero-section {
   width: 100%;
-  /* Restamos los ~90px que mide el Navbar para que la pantalla no tenga scroll */
   height: calc(100vh - 90px); 
   min-height: 600px;
   position: relative;
   overflow: hidden;
-  background-color: #f4f5f7;
+  /* Restaurado al blanco/gris muy claro original */
+  background-color: #f4f5f7; 
 }
 
 .hero-image-wrapper {
   position: absolute;
-  /* Volvemos a poner top: 0 y height: 100% porque el Navbar ya hizo el espacio */
   top: 0; 
   right: 0;
   width: 60%; 
@@ -85,11 +83,11 @@ onMounted(() => {
 .hero-image {
   width: 100%;
   height: 100%;
-  /* cover asegura que la foto llene el espacio sin deformarse */
   object-fit: cover; 
   object-position: right top; 
   filter: grayscale(100%); 
 }
+
 /* --- CONTENIDO DE TEXTO --- */
 .content-container {
   position: relative;
@@ -112,7 +110,8 @@ onMounted(() => {
   font-weight: 800;
   text-transform: uppercase;
   color: transparent;
-  -webkit-text-stroke: 2px #1a1a1a; 
+  /* Borde del texto usando tu color $primary */
+  -webkit-text-stroke: 2px #161827; 
   margin: 0;
   line-height: 0.9;
   letter-spacing: -2px;
@@ -122,7 +121,8 @@ onMounted(() => {
   font-size: 8rem;
   font-weight: 900;
   text-transform: uppercase;
-  color: #1a1a1a; 
+  /* Color sólido $primary */
+  color: #161827; 
   margin: 0;
   line-height: 0.9;
   letter-spacing: -2px;
@@ -135,7 +135,8 @@ onMounted(() => {
 
 .typing-text {
   font-size: 1.5rem;
-  color: #4b5563; 
+  /* Color de acento usando tu $info */
+  color: #193940; 
   font-weight: 600;
   letter-spacing: 1px;
   margin: 0;
@@ -145,15 +146,17 @@ onMounted(() => {
 .action-area {
   margin-top: 3rem;
   display: flex;
-  flex-direction: column; /* Agrega esto para apilarlos hacia abajo */
-  align-items: flex-start; /* Cambia 'center' a 'flex-start' para que se alineen a la izquierda */
-  gap: 1.5rem; /* Ajusta el espacio entre el botón y las redes */
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: 1.5rem; 
 }
+
 .cta-button {
   padding: 1rem 2.5rem;
-  background-color: #1a1a1a;
+  /* Botón con tu color $primary */
+  background-color: #161827;
   color: #ffffff;
-  border: 2px solid #1a1a1a;
+  border: 2px solid #161827;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
@@ -163,10 +166,9 @@ onMounted(() => {
 
 .cta-button:hover {
   background-color: transparent;
-  color: #1a1a1a;
+  color: #161827;
 }
 
-/* Estilos de las redes sociales añadidos nuevamente */
 .social-links {
   display: flex;
   gap: 1.2rem;
@@ -179,29 +181,32 @@ onMounted(() => {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  /* AQUÍ ESTÁ EL CAMBIO: 2px de grosor y color oscuro (#1a1a1a) */
-  border: 1.2px solid #1a1a1a; 
-  color: #1a1a1a;
+  /* Íconos con tu color $primary */
+  border: 1.2px solid #161827; 
+  color: #161827;
   font-size: 1.2rem;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-  background-color: #1a1a1a;
+  background-color: #161827;
   color: #ffffff;
-  border-color: #1a1a1a;
+  border-color: #161827;
   transform: translateY(-3px);
 }
 
-/* --- MÓVILES --- */
-/* --- MÓVILES --- */
 @media (max-width: 992px) {
   .hero-image-wrapper {
     width: 100%;
+    left: 0;
     -webkit-mask-image: linear-gradient(to top, transparent 0%, black 50%, black 100%);
     mask-image: linear-gradient(to top, transparent 0%, black 50%, black 100%);
     opacity: 0.3; 
+  }
+
+  .hero-image {
+    object-position: center top; 
   }
 
   .content-container {
@@ -214,12 +219,11 @@ onMounted(() => {
     font-size: 4rem; 
   }
 
-  /* AQUÍ ESTÁ LA MAGIA PARA CENTRAR LOS BOTONES */
   .action-area {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Esto sobrescribe el flex-start del escritorio y los centra */
+    align-items: center; 
     justify-content: center;
     gap: 1.5rem;
   }

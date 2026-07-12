@@ -74,23 +74,25 @@ const sendEmail = () => {
 
       </div>
     </div>
+  </section>
 
-    <!-- WhatsApp Flotante Moderno -->
+  <!-- AQUÍ ESTÁ LA MAGIA: Vue teletransportará este botón fuera de tu componente -->
+  <Teleport to="body">
     <a href="https://wa.me/50371933516" target="_blank" class="whatsapp-fab" aria-label="WhatsApp">
       <i class="bi bi-whatsapp"></i>
     </a>
-  </section>
+  </Teleport>
 </template>
 
 <style scoped>
-/* --- FONDO GENERAL (IGUAL AL HOME) --- */
+/* --- FONDO GENERAL --- */
 .contact-section {
-  background-color: #f4f5f7; /* Mismo fondo claro */
+  background-color: #f4f5f7; 
   color: #1a1a1a;
   position: relative;
 }
 
-/* --- TEXTOS (INSPIRADOS EN EL HOME) --- */
+/* --- TEXTOS --- */
 .contact-title {
   font-size: 4rem;
   line-height: 1;
@@ -112,7 +114,7 @@ const sendEmail = () => {
 }
 
 .contact-subtitle {
-  color: #4b5563; /* Mismo gris del subtítulo en Home */
+  color: #4b5563; 
   font-size: 1.15rem;
   line-height: 1.6;
   font-weight: 500;
@@ -123,7 +125,7 @@ const sendEmail = () => {
   background-color: #ffffff;
   border-radius: 8px;
   padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
   border: 1px solid #e5e7eb;
 }
 
@@ -169,7 +171,7 @@ const sendEmail = () => {
   box-shadow: 0 0 0 2px rgba(26, 26, 26, 0.1);
 }
 
-/* --- BOTÓN DE ENVIAR (IGUAL AL DEL HOME) --- */
+/* --- BOTÓN DE ENVIAR --- */
 .cta-button {
   padding: 1rem 2.5rem;
   background-color: #1a1a1a;
@@ -205,7 +207,7 @@ const sendEmail = () => {
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
   transition: all 0.3s ease;
-  z-index: 100;
+  z-index: 999999; /* Extra seguridad */
   animation: pulse 2s infinite;
 }
 
@@ -224,5 +226,14 @@ const sendEmail = () => {
 @media (max-width: 992px) {
   .contact-title { font-size: 3rem; }
   .contact-card { padding: 1.5rem; }
+  
+  .whatsapp-fab {
+    /* Mantenemos un buen espacio inferior para que Safari/Chrome móvil no lo tapen */
+    bottom: 5rem; 
+    right: 1.5rem;
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+  }
 }
 </style>

@@ -13,32 +13,31 @@ function closeMenu() {
 </script>
 
 <template>
-  <nav class="navbar custom-navbar">
-    <div class="container d-flex justify-content-between align-items-center w-100">
+  <!-- Adiós a la clase 'navbar' de Bootstrap -->
+  <nav class="custom-navbar">
+    
+    <!-- Reemplazamos las clases kilométricas de Bootstrap por una tuya: 'nav-container' -->
+    <div class="nav-container">
       
-      <!-- Logo: Símbolo 'A' Estilizado en SVG -->
-      <router-link to="/" class="navbar-brand logo" aria-label="Inicio">
+      <!-- Adiós 'navbar-brand' -->
+      <router-link to="/" class="logo" aria-label="Inicio">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-symbol">
-          <!-- Pata izquierda -->
           <path d="M20 6 L8 34" stroke="#e2e8f0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
-          <!-- Pata derecha (Acento Cian) -->
           <path d="M20 6 L32 34" stroke="#38bdf8" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
-          <!-- Línea central cruzada -->
           <path d="M12 24 L28 24" stroke="#e2e8f0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
-          <!-- Punto superior para toque tech -->
           <circle cx="20" cy="6" r="3" fill="#38bdf8" />
         </svg>
       </router-link>
 
-      <!-- Botón hamburguesa -->
-      <button class="hamburger bg-transparent" @click="toggleMenu" :class="{ 'active': isMenuOpen }" aria-label="Menú">
+      <!-- Adiós 'bg-transparent' -->
+      <button class="hamburger" @click="toggleMenu" :class="{ 'active': isMenuOpen }" aria-label="Menú">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
       </button>
 
-      <!-- Menú de navegación -->
-      <div class="nav-links ms-auto" :class="{ 'active': isMenuOpen }">
+      <!-- Adiós 'ms-auto' -->
+      <div class="nav-links" :class="{ 'active': isMenuOpen }">
         <router-link to="/" class="nav-link" @click="closeMenu">Home</router-link>
         <router-link to="/about" class="nav-link" @click="closeMenu">About</router-link>
         <router-link to="/projects" class="nav-link" @click="closeMenu">Portfolio</router-link>
@@ -51,25 +50,37 @@ function closeMenu() {
 
 <style scoped>
 .custom-navbar {
-  /* --- LA SOLUCIÓN HARAGANA PERO PERFECTA --- */
-  /* sticky hace que ocupe espacio (no tapa el contenido) pero se quede pegado al hacer scroll */
   position: sticky; 
   top: 0;
   left: 0;
   width: 100%;
   padding: 1.5rem 5%;
   
-  /* --- ESTILO DE COLOR: Negro Profundo --- */
+  /* --- Tu estilo oscuro con desenfoque de cristal --- */
   background-color: rgba(5, 5, 5, 0.85); 
   backdrop-filter: blur(12px); 
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
   
-  /* Subimos el z-index para asegurar que siempre flote sobre tus proyectos o vistas */
   z-index: 1000; 
 }
 
-/* Animación sutil para el logo al pasar el mouse */
+/* --- CLASES NUEVAS QUE REEMPLAZAN A BOOTSTRAP --- */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Evita que el menú se estire al infinito en monitores gigantes */
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
 .logo-symbol {
   transition: transform 0.3s ease;
 }
@@ -85,7 +96,7 @@ function closeMenu() {
 
 .nav-link {
   text-decoration: none;
-  color: #e2e8f0;
+  color: #e2e8f0; 
   font-size: 0.95rem;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -109,6 +120,7 @@ function closeMenu() {
   width: 2rem;
   height: 2rem;
   border: none;
+  background-color: transparent; /* Hace el trabajo de bg-transparent */
   cursor: pointer;
   padding: 0;
   z-index: 1110;
@@ -117,7 +129,7 @@ function closeMenu() {
 .hamburger-line {
   width: 2rem;
   height: 0.15rem;
-  background-color: #38bdf8;
+  background-color: #38bdf8; 
   border-radius: 10px;
   transition: all 0.3s ease;
   transform-origin: center;

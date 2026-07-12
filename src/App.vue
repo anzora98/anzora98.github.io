@@ -13,4 +13,17 @@ import Navbar from './components/Navbar.vue';
 </template>
 
 
-<style></style>
+<style>
+/* Agrégalo en tu App.vue en la sección de <style> */
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Obliga a la página a medir al menos el 100% de la pantalla */
+}
+
+html, body {
+  /* Bloquea el efecto elástico y no te deja jalar más allá del límite */
+  overscroll-behavior: none; 
+}
+
+</style>
