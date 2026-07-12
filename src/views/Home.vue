@@ -32,25 +32,28 @@ onMounted(() => {
     <!-- TEXTOS Y BOTONES -->
     <div class="content-container">
       <div class="text-content">
-        
+
         <h1 class="outline-text">Hello</h1>
         <h1 class="solid-text">I'm sam</h1>
-        
+
         <div class="typing-container">
           <h2 id="typing" class="typing-text"></h2>
         </div>
-        
-<div class="action-area">
+
+        <div class="action-area">
           <!-- Convertimos el <a> para que luzca y actúe como tu botón -->
           <!-- El atributo "download" fuerza al navegador a descargarlo en vez de solo abrirlo -->
-          <a href="/public/documents/cv.pdf" download="CV_Samuel_Anzora.pdf" class="cta-button" style="text-decoration: none; display: inline-block;">
+          <a href="/documents/cv.pdf" download="CV_Samuel_Anzora.pdf" class="cta-button"
+            style="text-decoration: none; display: inline-block;">
             Download CV
           </a>
-          
+
           <!-- Redes sociales -->
           <div class="social-links">
-            <a target="_blank" href="https://github.com/samuelanzora363823" class="social-icon" aria-label="GitHub"><i class="bi bi-github"></i></a>
-            <a target="_blank" href="https://www.linkedin.com/in/samuel-antonio-anzora-castellanos-456854230" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a target="_blank" href="https://github.com/samuelanzora363823" class="social-icon" aria-label="GitHub"><i
+                class="bi bi-github"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/samuel-antonio-anzora-castellanos-456854230"
+              class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
             <a href="#" class="social-icon" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
             <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
           </div>
@@ -65,20 +68,20 @@ onMounted(() => {
 /* --- AQUÍ ESTÁ LA CORRECCIÓN DEL FONDO --- */
 .hero-section {
   width: 100%;
-  height: calc(100vh - 90px); 
+  height: calc(100vh - 90px);
   min-height: 600px;
   position: relative;
   overflow: hidden;
   /* Restaurado al blanco/gris muy claro original */
-  background-color: #f4f5f7; 
+  background-color: #f4f5f7;
 }
 
 .hero-image-wrapper {
   position: absolute;
-  top: 0; 
+  top: 0;
   right: 0;
-  width: 45%; 
-  height: 100%; 
+  width: 45%;
+  height: 100%;
   z-index: 1;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%, black 100%);
   mask-image: linear-gradient(to right, transparent 0%, black 40%, black 100%);
@@ -87,9 +90,9 @@ onMounted(() => {
 .hero-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
-  object-position: right top; 
-  filter: grayscale(100%); 
+  object-fit: cover;
+  object-position: right top;
+  filter: grayscale(100%);
 }
 
 /* --- CONTENIDO DE TEXTO --- */
@@ -110,12 +113,12 @@ onMounted(() => {
 }
 
 .outline-text {
-  font-size: 8rem; 
+  font-size: 8rem;
   font-weight: 800;
   text-transform: uppercase;
   color: transparent;
   /* Borde del texto usando tu color $primary */
-  -webkit-text-stroke: 2px #161827; 
+  -webkit-text-stroke: 2px #161827;
   margin: 0;
   line-height: 0.9;
   letter-spacing: -2px;
@@ -126,7 +129,7 @@ onMounted(() => {
   font-weight: 900;
   text-transform: uppercase;
   /* Color sólido $primary */
-  color: #161827; 
+  color: #161827;
   margin: 0;
   line-height: 0.9;
   letter-spacing: -2px;
@@ -140,7 +143,7 @@ onMounted(() => {
 .typing-text {
   font-size: 1.5rem;
   /* Color de acento usando tu $info */
-  color: #193940; 
+  color: #193940;
   font-weight: 600;
   letter-spacing: 1px;
   margin: 0;
@@ -151,8 +154,8 @@ onMounted(() => {
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  gap: 1.5rem; 
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 
 .cta-button {
@@ -186,7 +189,7 @@ onMounted(() => {
   height: 45px;
   border-radius: 50%;
   /* Íconos con tu color $primary */
-  border: 1.2px solid #161827; 
+  border: 1.2px solid #161827;
   color: #161827;
   font-size: 1.2rem;
   text-decoration: none;
@@ -206,11 +209,11 @@ onMounted(() => {
     left: 0;
     -webkit-mask-image: linear-gradient(to top, transparent 0%, black 50%, black 100%);
     mask-image: linear-gradient(to top, transparent 0%, black 50%, black 100%);
-    opacity: 0.3; 
+    opacity: 0.3;
   }
 
   .hero-image {
-    object-position: center top; 
+    object-position: center top;
   }
 
   .content-container {
@@ -219,15 +222,16 @@ onMounted(() => {
     text-align: center;
   }
 
-  .outline-text, .solid-text { 
-    font-size: 4rem; 
+  .outline-text,
+  .solid-text {
+    font-size: 4rem;
   }
 
   .action-area {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
     gap: 1.5rem;
   }
